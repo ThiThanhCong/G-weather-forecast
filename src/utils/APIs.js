@@ -2,7 +2,7 @@ import { axiosClient } from "./AxiosClient";
 
 const registerEmail = async (email) => {
     try {
-        const response = await axiosClient.post('/api/sendmail/OTP', { email });
+        const response = await axiosClient.post('/api/api/sendmail/OTP', { email });
         console.log("res: ", response);
         if (response.data) {
             return response.status;

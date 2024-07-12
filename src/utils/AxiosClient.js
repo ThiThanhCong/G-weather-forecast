@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Tạo một instance axios với baseURL
 export const axiosClient = axios.create({
-    baseURL: import.meta.env.VITE_BACKEND_URL,
+    baseURL: "https://backend-weather-nine.vercel.app",
 });
 
 // Thêm interceptor cho yêu cầu
