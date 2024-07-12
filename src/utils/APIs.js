@@ -17,7 +17,7 @@ const registerEmail = async (email) => {
 };
 const checkOTP = async (otp, email) => {
     try {
-        const response = await axiosClient.post('/api/verifyOTP', { otp: otp, email: email });
+        const response = await axiosClient.post('/api/api/verifyOTP', { otp: otp, email: email });
         console.log(response);
         if (response.status)
             return response;
@@ -34,7 +34,7 @@ const saveWeatherReport = async (data) => {
             ...data
         };
         console.log(requestData)
-        const response = await axiosClient.post('/api/save', requestData);
+        const response = await axiosClient.post('/api/api/save', requestData);
         console.log('Weather report saved:', response.data);
 
     } catch (error) {
@@ -46,7 +46,7 @@ const saveWeatherReport = async (data) => {
 
 const loadWeatherReport = async () => {
     try {
-        const response = await axiosClient.get('/api/reports');
+        const response = await axiosClient.get('/api/api/reports');
         const weatherReports = response.reportDates;
         console.log('Weather reports:', weatherReports);
         return weatherReports;
@@ -58,7 +58,7 @@ const loadWeatherReport = async () => {
 
 const loadWeatherByDate = async (date) => {
     try {
-        const response = await axiosClient.get(`/api/getByDate/${date}`);
+        const response = await axiosClient.get(`/api/api/getByDate/${date}`);
         const weatherData = response.weatherData;
         console.log(`Weather data for ${date}:`, weatherData);
         return weatherData;
@@ -70,7 +70,7 @@ const loadWeatherByDate = async (date) => {
 
 const unSubscribe = async (email) => {
     try {
-        const response = await axiosClient.delete('/api/unRegister', {
+        const response = await axiosClient.delete('/api/api/unRegister', {
             data: { email }
         });
         if (response)
