@@ -173,6 +173,7 @@ const WeatherDashboard = () => {
 
         setShowModal(false);
         setShowOTPMoDal(false);
+        setShowModalUnRegister(false);
     };
 
     const handleSaveWeather = () => {
