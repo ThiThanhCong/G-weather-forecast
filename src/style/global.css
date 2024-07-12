@@ -51,36 +51,57 @@ body {
     color: white;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.LoadBtn button {
-    padding: 10px;
-    border: 1px solid #4a90e2;
-    background-color: #4a90e2;
+.saveBtn {
+    margin-right: 10px;
+}
+
+.saveButton,
+.loadButton {
+    background-color: #4CAF50;
     color: white;
-    border-radius: 5px;
-    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
     margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.saveButton:hover,
+.loadButton:hover {
+    background-color: #45a049;
+}
+
+.Register {
     margin-bottom: 10px;
 }
 
-
-.LoadBtn button:hover {
-    background-color: #357ab7;
-}
-
-.saveBtn button {
-    padding: 10px;
-    border: 1px solid #000000;
-    background-color: #117cff;
-    color: rgb(255, 255, 255);
-    border-radius: 5px;
+.Register button,
+.LoadBtn button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
     cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
 }
 
-.saveBtn button:hover {
-    background-color: #357ab7;
+.Register button:hover,
+.LoadBtn button:hover {
+    background-color: #0056b3;
+
 }
+
 
 .search-box button:hover {
     background-color: #357ab7;
@@ -291,4 +312,69 @@ body {
 
 .modal button:hover {
     background-color: #45a049;
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+
+.success-message {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-50%) translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Trong file CSS của bạn */
+.report-dates {
+    margin-top: 20px;
+    transition: max-height 0.3s ease;
+}
+
+.report-dates h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.report-dates ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.report-dates li {
+    margin-bottom: 10px;
+}
+
+.report-dates button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.report-dates button:hover {
+    background-color: #0056b3;
 }

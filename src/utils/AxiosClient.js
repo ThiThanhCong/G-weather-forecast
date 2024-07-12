@@ -1,27 +1,36 @@
-// Set config defaults when creating the instance
-const instance = axios.create({
-    baseURL: import.meta.env.VITE_BACKEND_URL
+import axios from "axios";
+
+// Tạo một instance axios với baseURL
+export const axiosClient = axios.create({
+    baseURL: import.meta.env.VITE_BACKEND_URL,
 });
 
-// Alter defaults after instance has been created
-//   instance.defaults.headers.common['Authorization'] = AUTH_TOKEN;
-// Add a request interceptor
-instance.interceptors.request.use(function (config) {
-    // Do something before request is sent
-    return config;
-}, function (error) {
-    // Do something with request error
-    return Promise.reject(error);
-});
+// Thêm interceptor cho yêu cầu
+axiosClient.interceptors.request.use(
+    async (config) => {
+        config.headers = {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials": "true",
+            "Access-Control-Max-Age": "1800",
+            "Access-Control-Allow-Headers": "content-type",
+            "Access-Control-Allow-Methods": "PUT, POST, GET, DELETE, PATCH, OPTIONS",
+            ...config.headers,
+        };
+        return config;
+    }
+);
 
-// Add a response interceptor
-instance.interceptors.response.use(function (response) {
-    // Any status code that lie within the range of 2xx cause this function to trigger
-    // Do something with response data
-    return response;
-}, function (error) {
-    // Any status codes that falls outside the range of 2xx cause this function to trigger
-    // Do something with response error
-    return Promise.reject(error);
-});
-export default instance;
+// Thêm interceptor cho phản hồi
+axiosClient.interceptors.response.use(
+    (response) => {
+        if (response.status === 200 && response.data) {
+            return response.data;
+        }
+        return response;
+    },
+    (error) => {
+        console.log(error.message);
+        return Promise.reject(error);  // Đảm bảo ném lỗi để xử lý sau này
+    }
+);
