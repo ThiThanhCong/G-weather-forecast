@@ -10,7 +10,7 @@ const WeatherDashboard = () => {
     const [forecastData, setForecastData] = useState([]);
 
     const [loading, setLoading] = useState(true);
-    const [daysToShow, setDaysToShow] = useState(5);
+    const [daysToShow, setDaysToShow] = useState(4);
     const [reload, setReload] = useState(true);
     const [showModal, setShowModal] = useState(false);
     const [showOTPModal, setShowOTPMoDal] = useState(false);
@@ -85,7 +85,7 @@ const WeatherDashboard = () => {
             const forecastResponse = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=${days}`);
             const forecast = await forecastResponse.json();
 
-            setForecastData(prevForecastData => [...prevForecastData, ...forecast.forecast.forecastday.slice(1, days)]);
+            setForecastData(forecast.forecast.forecastday);
         } catch (error) {
             console.error('Error fetching weather data:', error);
         } finally {
