@@ -94,7 +94,7 @@ const WeatherDashboard = () => {
     };
 
     const handleSearch = (current = false) => {
-        setDaysToShow(0)
+        setDaysToShow(4)
         if (current) {
             setCity("Hồ Chí Minh");
         } else {
