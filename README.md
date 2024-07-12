@@ -28,10 +28,10 @@ Make sure you have Node.js installed on your machine. If not, you can download i
    npm run dev
    ```
 ### Usage
-After completing the installation steps, open your web browser and navigate to [LocalHost]([http://localhost:5173]) to view the Weather Dashboard.
+After completing the installation steps, open your web browser and navigate to [LocalHost](http://localhost:5173) to view the Weather Dashboard.
 
 ### Deployment
-The deployed version of this project can be accessed at [G-Weather-Forecast]([https://g-weather-forecast-one.vercel.app/])
+The deployed version of this project can be accessed at [G-Weather-Forecast](https://g-weather-forecast-one.vercel.app/)
 
 ### Features
 - Real-time weather data display.
