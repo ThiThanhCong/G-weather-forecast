@@ -13,7 +13,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 90%;
+    width: 100%;
     max-width: 800px;
     max-height: 90vh;
     overflow-y: auto;
@@ -38,7 +38,7 @@ body {
 
 .search-box input {
     padding: 10px;
-    width: 100px;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 5px;
     flex: 1;
@@ -54,55 +54,6 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.saveBtn {
-    margin-right: 10px;
-}
-
-.saveButton,
-.loadButton {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.saveButton:hover,
-.loadButton:hover {
-    background-color: #45a049;
-}
-
-.Register {
-    margin-bottom: 10px;
-}
-
-.Register button,
-.LoadBtn button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.Register button:hover,
-.LoadBtn button:hover {
-    background-color: #0056b3;
-
-}
-
-
 .search-box button:hover {
     background-color: #357ab7;
 }
@@ -112,13 +63,7 @@ body {
     cursor: not-allowed;
 }
 
-.search-box .or {
-    margin: 0 10px;
-    color: #4a90e2;
-}
-
 .current-weather,
-
 .forecast {
     background-color: #4a90e2;
     color: white;
@@ -129,7 +74,6 @@ body {
     justify-content: space-between;
     overflow-wrap: break-word;
     margin-bottom: 20px;
-
 }
 
 .current-weather h2 {
@@ -141,11 +85,6 @@ body {
     margin: 5px 0;
 }
 
-.forecast {
-    display: flex;
-    justify-content: space-between;
-}
-
 .forecast-day {
     background-color: #ffffff;
     color: #4a90e2;
@@ -153,11 +92,10 @@ body {
     padding: 10px;
     margin: 10px;
     text-align: center;
-    width: calc(25% - 20px);
+    width: calc(50% - 20px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
-
 
 .forecast-day h3 {
     margin: 0 0 10px;
@@ -168,63 +106,17 @@ body {
     margin: 5px 0;
 }
 
-.current-location-btn {
-    border-radius: 5px;
-}
-
-.spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border-left-color: #4a90e2;
-    animation: spin 1s ease infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
+@media (min-width: 600px) {
+    .forecast-day {
+        width: calc(33.33% - 20px);
     }
 }
 
-.current-weather {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #4a90e2;
-    color: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
+@media (min-width: 900px) {
+    .forecast-day {
+        width: calc(25% - 20px);
+    }
 }
-
-.weather-details {
-    flex: 1;
-}
-
-.weather-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.weather-icon img {
-    width: 80px;
-    height: 80px;
-}
-
-.weather-icon p {
-    margin: 5px 0 0;
-    font-size: 14px;
-    text-align: center;
-}
-
-
 
 .modal {
     display: flex;
@@ -250,18 +142,6 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     animation: slide-in 0.3s ease-out;
-}
-
-@keyframes slide-in {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
 }
 
 .close {
@@ -319,7 +199,6 @@ body {
     margin-bottom: 10px;
 }
 
-
 .success-message {
     background-color: #4caf50;
     color: white;
@@ -345,7 +224,6 @@ body {
     }
 }
 
-/* Trong file CSS của bạn */
 .report-dates {
     margin-top: 20px;
     transition: max-height 0.3s ease;
@@ -377,4 +255,52 @@ body {
 
 .report-dates button:hover {
     background-color: #0056b3;
+}
+
+
+
+.saveButton,
+.loadButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.saveButton:hover,
+.loadButton:hover {
+    background-color: #45a049;
+}
+
+
+
+.Register {
+    margin-bottom: 10px;
+}
+
+.Register button,
+.LoadBtn button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.Register button:hover,
+.LoadBtn button:hover {
+    background-color: #0056b3;
+
 }
