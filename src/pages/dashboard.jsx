@@ -218,6 +218,7 @@ const WeatherDashboard = () => {
                     text: weatherData.condition_text
                 }
             }));
+            setCity(weatherData.city)
             setDate(weatherData.report_date)
             setSelectedReportDate(selectedDate);
         } catch (error) {
