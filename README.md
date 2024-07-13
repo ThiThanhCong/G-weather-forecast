@@ -16,7 +16,7 @@ Make sure you have Node.js installed on your machine. If not, you can download i
 
    ```bash
    git clone https://github.com/ThiThanhCong/G-weather-forecast.git
-   cd weather-dashboard
+   cd G-weather-forecast
    ```
 2. **Install dependencies:**
 
