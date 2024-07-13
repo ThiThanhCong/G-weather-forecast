@@ -37,3 +37,7 @@ The deployed version of this project can be accessed at [G-Weather-Forecast](htt
 - Real-time weather data display.
 - Register for daily weather report at Ho Chi Minh city.
 - Searching for weather condition at city/country.
+
+### Demo
+[Demo link](https://www.youtube.com/watch?v=7DK1Cfo6IxA&t=1s)
+P/S: This project uses the UTC timezone, so the displayed times may not be accurate for your local timezone.
