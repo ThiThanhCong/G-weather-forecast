@@ -1,6 +1,6 @@
-# Weather Dashboard Project
+# Weather Forecast Project
 
-Welcome to the Weather Dashboard Project! This guide will help you set up and run the project locally.
+Welcome to the Weather Forecast Project! This guide will help you set up and run the project locally.
 
 ## Getting Started
 
@@ -37,6 +37,7 @@ The deployed version of this project can be accessed at [G-Weather-Forecast](htt
 - Real-time weather data display.
 - Register for daily weather report at Ho Chi Minh city.
 - Searching for weather condition at city/country.
+- Responsive
 
 ### Demo
 [Demo link](https://www.youtube.com/watch?v=7DK1Cfo6IxA&t=1s)
