@@ -77,12 +77,13 @@ const WeatherDashboard = () => {
     const fetchWeatherData = async (days) => {
         setLoading(true);
         try {
-            const apiKey = 'ca1510b9fee441738ad114601241107';
-            const weatherResponse = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`);
+            const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
+            const apiUrl = import.meta.env.VITE_WEATHER_API_URL;
+            const weatherResponse = await fetch(`${apiUrl}/current.json?key=${apiKey}&q=${city}`);
             const weather = await weatherResponse.json();
             setWeatherData(weather.current);
 
-            const forecastResponse = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=${days}`);
+            const forecastResponse = await fetch(`${apiUrl}/forecast.json?key=${apiKey}&q=${city}&days=${days}`);
             const forecast = await forecastResponse.json();
 
             setForecastData(forecast.forecast.forecastday);
